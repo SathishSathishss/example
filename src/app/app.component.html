@@ -1,0 +1,97 @@
+ 
+  <h1>This is Sathish {{title}}</h1>
+  
+ <input type="text" [(ngModel)]="title">
+ 
+  <h1>isLeapYear :{{isLeapYear%4==0?true:false}}</h1>
+  <input type="text" [(ngModel)]="isLeapYear">
+
+<p>message={{isLeapYear%4==0?"is LeapYear":"is not leaper"}}</p>
+<ul>
+  <li>{{li[0]}}</li>
+  <li>{{li[1]}}</li>
+  <li>{{li[2]}}</li>
+</ul>
+
+<ul>
+  <li>{{itemList[0]}}</li>
+  <li>{{itemList[1]}}</li>
+  <li>{{itemList[2]}}</li>
+</ul>
+
+
+<!-- <div> -->
+  <input id="input" [(ngModel)]="newItem" placeholder="Add item">
+  <button (click)="addItem()">Add</button><br><br><br>
+  <!-- <ul> -->
+    <!-- <li *ngFor="let item of itemList;"> -->
+      <!-- {{ item }} -->
+    <!-- </li> -->
+  <!-- </ul> -->
+<!-- </div> -->
+
+
+<h1>TABLE</h1>
+<table border="3px">
+<tr>
+  <th>S.No</th>
+  <th>Name</th>
+</tr>
+<tr *ngFor="let nam of name1;let i=index">
+  <td>{{i+1}}</td>
+  <td>{{nam}}</td>
+</tr>
+</table><br><br>
+
+<app-table></app-table>
+
+<label for="">Table</label>
+<input type="checkbox" [(ngModel)]="tableView">
+
+<div *ngIf="tableView">
+<app-table></app-table>
+</div>
+
+<div *ngIf="!tableView"><app-list></app-list>
+</div><br>
+
+Select To View 
+<label><input type="radio"[(ngModel)]="table"name="n" value="le" />List</label>
+<label><input type="radio"[(ngModel)]="table"name="n" value="movie"/>Table</label>
+<label><input type="radio"[(ngModel)]="table"name="n" value=""/>None</label>
+
+
+<div *ngIf="table ==='movie'">
+  <app-table></app-table>
+</div>
+  
+<div *ngIf="table === 'le'">
+  <app-list></app-list>
+</div><br><br><br>
+
+Check :<input type="text"[(ngModel)]="name">
+<div [ngSwitch]="name">
+<div *ngSwitchCase="1">Sathish</div>
+<div *ngSwitchCase="2">Prathap</div>
+<div *ngSwitchCase="3">PrasanaMani</div>
+<div *ngSwitchCase="4">KuttyPrasana</div>
+<div *ngSwitchCase="5">Naveen</div>
+<div *ngSwitchCase="0">There Is No Name</div>
+</div>
+
+<div>{{Title | lowercase}}</div>
+<div>{{Title | uppercase}}</div>
+<div>{{Title | slice:1:3}}</div>
+
+<div>{{date | date:'short'}}</div>
+<div>{{date | date:'long'}}</div>
+<div>{{date | date:'medium'}}</div>
+<div>{{date | date:'full'}}</div>
+<div>{{date | date}}</div><br><br>
+
+<div>{{4000 | currency}}</div>
+
+
+
+
+
